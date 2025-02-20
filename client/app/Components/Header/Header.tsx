@@ -23,7 +23,7 @@ function Header() {
           <span role="img" aria-label="wave">
             👋
           </span>
-          {userId ? `Welcome, ${name}!` : "Welcome to Taskfyer"}
+          {userId ? `Welcome, ${name}!` : "Welcome to Task Manager"}
         </h1>
         <p className="text-sm">
           {userId ? (
@@ -56,31 +56,13 @@ function Header() {
 
         <div className="flex gap-4 items-center">
           <Link
-            href="https://github.com/Maclinz/taskfyer"
+            href="https://github.com/kraman82351/Task-management"
             passHref
             target="_blank"
             rel="noopener noreferrer"
             className="h-[40px] w-[40px] text-purple-500 rounded-full flex items-center justify-center text-lg border-2 border-[#E6E6E6]"
           >
             {github}
-          </Link>
-          <Link
-            href="https://github.com/Maclinz/taskfyer"
-            passHref
-            target="_blank"
-            rel="noopener noreferrer"
-            className="h-[40px] w-[40px] text-purple-500 rounded-full flex items-center justify-center text-lg border-2 border-[#E6E6E6]"
-          >
-            {moon}
-          </Link>
-          <Link
-            href="https://github.com/Maclinz/taskfyer"
-            passHref
-            target="_blank"
-            rel="noopener noreferrer"
-            className="h-[40px] w-[40px] text-purple-500 rounded-full flex items-center justify-center text-lg border-2 border-[#E6E6E6]"
-          >
-            {profile}
           </Link>
         </div>
       </div>
