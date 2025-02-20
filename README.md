@@ -76,6 +76,13 @@ CLIENT_URL=http://localhost:3000 || your-project-frontend-base-url
 cd backend
 npm run start
 ```
+
+#### **To access the Swagger API collection**
+
+```sh
+`http://localhost:5000/api-docs`
+```
+
  
 #### **Start the Frontend**
  
@@ -123,6 +130,14 @@ docker compose down
 ```
  
 ---
+
+## **API Endpoints**
+ 
+### **Backend-Base URL:** `http://localhost:5000`
+
+### **Frontend-Base URL:** `http://localhost:3000`
+
+### **Swagger API collection URL:** `http://localhost:5000/api-docs`
  
 ## **Environment Variables**
  
