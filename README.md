@@ -30,8 +30,8 @@ To run the project locally without Docker, follow these steps:
 ### **1️⃣ Clone the Repository**
  
 ```sh
-git clone https://github.com/your-repo/your-project.git
-cd your-project
+git clone https://github.com/kraman82351/Task-management.git
+cd Task-management
 ```
  
 ### **2️⃣ Install Dependencies**
@@ -39,7 +39,7 @@ cd your-project
 #### **Frontend**
  
 ```sh
-cd frontend
+cd client
 npm install
 ```
  
@@ -64,6 +64,8 @@ Add the following variables inside **backend/.env**:
 MONGO_URI=your-mongodb-connection-string
 PORT=5000
 NODE_ENV=development
+JWT_SECRET=your-jwt-secret
+CLIENT_URL=http://localhost:3000 || your-project-frontend-base-url
 ```
  
 ### **4️⃣ Run the Application**
@@ -72,13 +74,13 @@ NODE_ENV=development
  
 ```sh
 cd backend
-npm run dev
+npm run start
 ```
  
 #### **Start the Frontend**
  
 ```sh
-cd ../frontend
+cd ../client
 npm run dev
 ```
  
@@ -131,22 +133,10 @@ The backend requires the following environment variables in `backend/.env`:
 | `MONGO_URI` | MongoDB Atlas connection string      |
 | `PORT`      | Port for the backend (default: 5000) |
 | `NODE_ENV`  | Set to `production` in Docker        |
+| `JWT_SECRET`| set any JWT secret of your choice    |
+| `CLIENT_URL`| your frontend base url               |
  
 ---
- 
-## **API Endpoints**
- 
-### **Base URL:** `http://localhost:5000`
- 
-| Method | Endpoint         | Description       |
-| ------ | ---------------- | ----------------- |
-| GET    | `/api/health`    | Check API status  |
-| POST   | `/api/users`     | Create a new user |
-| GET    | `/api/users/:id` | Get user details  |
- 
----
- 
-## **Common Issues & Fixes**
  
 1️⃣ **Port Already in Use Error**
  
