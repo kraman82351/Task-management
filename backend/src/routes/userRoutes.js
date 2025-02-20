@@ -24,6 +24,22 @@ import {
 
 const router = express.Router();
 
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.get("/logout", logoutUser);
+router.get("/user", protect, getUser);
+router.patch("/user", protect, updateUser);
+router.delete("/admin/users/:id", protect, adminMiddleware, deleteUser);
+router.get("/admin/users", protect, creatorMiddleware, getAllUsers);
+router.get("/login-status", userLoginStatus);
+router.post("/verify-email", protect, verifyEmail);
+router.post("/verify-user/:verificationToken", verifyUser);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password/:resetPasswordToken", resetPassword);
+router.patch("/change-password", protect, changePassword);
+
+export default router;
+
 /**
  * @swagger
  * /register:
@@ -53,7 +69,7 @@ const router = express.Router();
  *       201:
  *         description: User registered successfully
  */
-router.post("/register", registerUser);
+
 
 /**
  * @swagger
@@ -81,7 +97,7 @@ router.post("/register", registerUser);
  *       200:
  *         description: User logged in successfully
  */
-router.post("/login", loginUser);
+
 
 /**
  * @swagger
@@ -93,7 +109,7 @@ router.post("/login", loginUser);
  *       200:
  *         description: User logged out successfully
  */
-router.get("/logout", logoutUser);
+
 
 /**
  * @openapi
@@ -144,7 +160,7 @@ router.get("/logout", logoutUser);
  *                   type: string
  *                   example: "User not found!"
  */
-router.get("/user", protect, getUser);
+
 
 
 /**
@@ -236,7 +252,7 @@ router.get("/user", protect, getUser);
  *                   type: string
  *                   example: "User not found"
  */
-router.patch("/user", protect, updateUser);
+
 
 
 /**
@@ -309,7 +325,7 @@ router.patch("/user", protect, updateUser);
  *                   type: string
  *                   example: "Cannot Delete User"
  */
-router.delete("/admin/users/:id", protect, adminMiddleware, deleteUser);
+
 
 /**
  * @openapi
@@ -384,7 +400,7 @@ router.delete("/admin/users/:id", protect, adminMiddleware, deleteUser);
  *                   type: string
  *                   example: "Cannot get users"
  */
-router.get("/admin/users", protect, creatorMiddleware, getAllUsers);
+
 
 
 /**
@@ -413,7 +429,7 @@ router.get("/admin/users", protect, creatorMiddleware, getAllUsers);
  *               type: boolean
  *               example: false
  */
-router.get("/login-status", userLoginStatus);
+
 
 
 /**
@@ -468,7 +484,7 @@ router.get("/login-status", userLoginStatus);
  *                   type: string
  *                   example: "Email could not be sent"
  */
-router.post("/verify-email", protect, verifyEmail);
+
 
 
 /**
@@ -518,7 +534,7 @@ router.post("/verify-email", protect, verifyEmail);
  *                   type: string
  *                   example: "User not found"
  */
-router.post("/verify-user/:verificationToken", verifyUser);
+
 
 
 /**
@@ -584,7 +600,7 @@ router.post("/verify-user/:verificationToken", verifyUser);
  *                   type: string
  *                   example: "Email could not be sent"
  */
-router.post("/forgot-password", forgotPassword);
+
 
 /**
  * @openapi
@@ -644,7 +660,7 @@ router.post("/forgot-password", forgotPassword);
  *                   type: string
  *                   example: "User not found"
  */
-router.post("/reset-password/:resetPasswordToken", resetPassword);
+
 
 
 /**
@@ -704,7 +720,7 @@ router.post("/reset-password/:resetPasswordToken", resetPassword);
  *                   type: string
  *                   example: "Not authorized"
  */
-router.patch("/change-password", protect, changePassword);
 
 
-export default router;
+
+

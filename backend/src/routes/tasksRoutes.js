@@ -17,6 +17,15 @@ const router = express.Router();
  *   description: Task management endpoints
  */
 
+router.post("/task/create", protect, createTask);
+router.get("/tasks", protect, getTasks);
+router.get("/task/:id", protect, getTask);
+router.patch("/task/:id", protect, updateTask);
+router.delete("/task/:id", protect, deleteTask);
+
+
+export default router;
+
 /**
  * @openapi
  * /task/create:
@@ -116,8 +125,6 @@ const router = express.Router();
  *                   type: string
  *                   example: "Something went wrong!"
  */
-router.post("/task/create", protect, createTask);
-
 
 /**
  * @openapi
@@ -198,7 +205,7 @@ router.post("/task/create", protect, createTask);
  *                   type: string
  *                   example: "Something went wrong!"
  */
-router.get("/tasks", protect, getTasks);
+
 
 
 /**
@@ -289,7 +296,7 @@ router.get("/tasks", protect, getTasks);
  *                   type: string
  *                   example: "Something went wrong!"
  */
-router.get("/task/:id", protect, getTask);
+
 
 /**
  * @openapi
@@ -405,7 +412,6 @@ router.get("/task/:id", protect, getTask);
  *                   type: string
  *                   example: "Something went wrong!"
  */
-router.patch("/task/:id", protect, updateTask);
 
 /**
  * @openapi
@@ -466,7 +472,4 @@ router.patch("/task/:id", protect, updateTask);
  *                   type: string
  *                   example: "Something went wrong!"
  */
-router.delete("/task/:id", protect, deleteTask);
 
-
-export default router;
